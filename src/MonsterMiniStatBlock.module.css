@@ -1,0 +1,28 @@
+.miniStatblock{
+    margin: 5px 5px 5px 5px;
+    border: solid #282c34 ;
+    flex: 0 0 32%;
+  }
+
+  .statHeader{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .baseinfo{
+      flex-grow: 2;
+  }
+
+  .buttonContainer{
+      flex-grow: 1;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row-reverse;
+  }
+
+  .buttonContainer button, .buttonContainer a{
+    height: 25px;
+    width: 25px;
+    text-decoration:none;
+    font-family: 'Times New Roman', Times, serif;
+  }
