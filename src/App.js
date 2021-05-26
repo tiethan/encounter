@@ -8,6 +8,7 @@ import {
   Route
 } from "react-router-dom";
 import MonsterDetail from './MonsterDetail';
+import Grid from '@material-ui/core/Grid';
 
 function App() {
   const apiRoot = 'https://www.dnd5eapi.co';
@@ -92,10 +93,14 @@ function App() {
 
           <Route path="/" render={ (props) => {
             return(
-              <>
-                <Encounter monsters={encounterList} removeHandler={removeFromEncounter}  />
-                <MonsterIndex monsterIndex={monsterIndex} addHandler={addToEncounter} />
-              </>
+              <Grid container spacing={3}>
+                <Grid item xs={9}>
+                  <Encounter monsters={encounterList} removeHandler={removeFromEncounter}  />
+                </Grid>
+                <Grid item xs={3}>
+                  <MonsterIndex monsterIndex={monsterIndex} addHandler={addToEncounter} />
+                </Grid>
+              </Grid>
             )
           }} />
         </Switch>
