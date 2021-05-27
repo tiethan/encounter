@@ -22,7 +22,7 @@ function Encounter(props){
         tempEncounter.totalCR = cr;
         tempEncounter.totalMonsters = props.monsters.length;
         setEncounter(tempEncounter);
-    }, [props.monsters] );
+    }, [props.monsters] ); // eslint-disable-line react-hooks/exhaustive-deps
 
     return(
         <Grid container spacing={4} className="encounterBox">
