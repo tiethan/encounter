@@ -1,6 +1,8 @@
-.buttonContainer button, .buttonContainer a{
+.buttonContainer button, .buttonContainer a, .MuiListItemSecondaryAction-root button{
     height: 25px;
     width: 25px;
     text-decoration:none;
     font-family: 'Times New Roman', Times, serif;
   }
+
+  

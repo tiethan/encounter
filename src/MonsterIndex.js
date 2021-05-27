@@ -1,3 +1,4 @@
+import { List, ListItem, TextField } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import MonsterIndexItem from "./MonsterIndexItem"
 
@@ -25,11 +26,14 @@ function MonsterIndex(props){
     return(
         <div className="monsterIndexBox">
             <h2>Monsters</h2>
-            <input type="text" value={filterText} onChange={handleChange} />
-            {filteredList.map((monster) => {
-                return <MonsterIndexItem key={'index_' + monster.name} monster={monster} addHandler={props.addHandler}  />
-            })
-          }
+            
+            <TextField id="txtMonsterSearch" label="Search Monsters" variant="filled" value={filterText} onChange={handleChange} />
+            <List dense={true} disablePadding={true}>
+                {filteredList.map((monster) => {
+                    return <MonsterIndexItem key={'index_' + monster.name} monster={monster} addHandler={props.addHandler}  />
+                })}
+            </List>
+          
         </div>
     )
 }

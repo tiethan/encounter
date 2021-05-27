@@ -16,7 +16,7 @@ function EncounterMonsters(props){
                 // removeHanlder could be: 
                 // removeHandler={() => dispatch({type:'REMOVE_MONSTER', position: index})}
                 // then we don't have to pass in position, and ministatblock doesn't need to implement handleclick
-                return <Grid item xs={4}> <MonsterMiniStatBlock key={'index_' + monster.index + '_' + index} position={index} monster={monster}  removeHandler={props.removeHandler} /> </Grid>
+                return <Grid key={'grid_index_' + monster.index + '_' + index} item xs={4}> <MonsterMiniStatBlock key={'index_' + monster.index + '_' + index} position={index} monster={monster}  removeHandler={props.removeHandler} /> </Grid>
             })
             }
           </Grid>

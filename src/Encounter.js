@@ -1,3 +1,4 @@
+import { Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import EncounterMonsters from "./EncounterMonsters";
 
@@ -21,16 +22,20 @@ function Encounter(props){
         tempEncounter.totalCR = cr;
         tempEncounter.totalMonsters = props.monsters.length;
         setEncounter(tempEncounter);
-    }, [props.monsters, encounter] );
+    }, [props.monsters] );
 
     return(
-        <div className="encounterBox">
-            <h2>Encounter</h2>
-            <div><b>Total XP:</b> {encounter.totalXP}</div>
-            <div><b>Total CR:</b> {encounter.totalCR}</div>
-            <div><b>Number of Monsters:</b> {encounter.totalMonsters}</div>
-            <EncounterMonsters monsters={props.monsters} removeHandler={props.removeHandler}/>
-        </div>
+        <Grid container spacing={4} className="encounterBox">
+            <Grid item xs={12}>
+                <h2>Encounter</h2>
+                <div><b>Total XP:</b> {encounter.totalXP}</div>
+                <div><b>Total CR:</b> {encounter.totalCR}</div>
+                <div><b>Number of Monsters:</b> {encounter.totalMonsters}</div>
+            </Grid>
+            <Grid item xs={12}>
+                <EncounterMonsters monsters={props.monsters} removeHandler={props.removeHandler}/>
+            </Grid>
+        </Grid>
     )
 }
 export default Encounter;

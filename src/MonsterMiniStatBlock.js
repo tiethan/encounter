@@ -43,7 +43,7 @@ function MonsterMiniStatBlock(props){
                 <ul>
                     {
                         monster.actions.map((action, index) => {
-                            return <li><b>{action.name}</b> {action.desc}</li>
+                            return <li key={"actions_"+index}><b>{action.name}</b> {action.desc}</li>
                         })
                     }
                 </ul>

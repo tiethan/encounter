@@ -1,3 +1,4 @@
+import { Grid } from "@material-ui/core";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import KeyValueList from "./KeyValueList";
@@ -17,14 +18,14 @@ function MonsterDetail({monsterCache, fetchMonster}){
     return(
         <>
             { monster  && (
-            <div>
-                <div>
+            <Grid container spacing={3}>
+                <Grid item xs={8}>
                     <h2>{monster.name} ({monster.size} {monster.alignment} {monster.type}) (XP {monster.xp} CR {monster.challenge_rating}) </h2>
                     <div>
                         <Link to="/">Back</Link>
                     </div>
-                </div>
-                <div>
+                </Grid>
+                <Grid item xs={8}>
                     <div className={styles.baseInfo}>
                         <div>AC: {monster.armor_class} HP: {monster.hit_points} SPD: <KeyValueList object={monster.speed} /></div>
                         <div>Senses: <KeyValueList object={monster.senses}/></div>
@@ -39,8 +40,8 @@ function MonsterDetail({monsterCache, fetchMonster}){
                             }
                         </ul>
                     </div>
-                </div>
-            </div>
+                </Grid>
+            </Grid>
             )}
         </>
     )
